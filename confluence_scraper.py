@@ -78,7 +78,7 @@ def remove_file(output_file, output_file_name):
         print("File not removed.")
 
 def arguments():
-    parser = argparse.ArgumentParser(description='This program scrapes the kiki page to build a list of AWS accounts referenced in other modules.')
+    parser = argparse.ArgumentParser(description='This program scrapes the confluence page to build a list of AWS accounts referenced in other modules.')
 
     parser.add_argument(
     "-u",
@@ -99,9 +99,9 @@ def web_scraper(options):
     output_dir = os.path.join( '..', '..', 'output_files', 'aws_accounts_list')
     with contextlib.redirect_stdout(io.StringIO()):
         create_work_dir(output_dir)
-    filename = 'aws_kiki_page-' + today
+    filename = 'aws_wiki_page-' + today
     destination = os.path.join(output_dir, filename + '.csv' )
-    url = 'https://kiki.us.kworld.company.com/display/6TO/AWS+Accounts'
+    url = 'https://wiki.us.kworld.company.com/display/6TO/AWS+Accounts'
     message = "Log into the kiki"
     print(Fore.CYAN)
     banner(message)
